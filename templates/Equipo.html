@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="language" content="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilos/estilosEquipos.css') }}">
+  <title>Gamering</title>
+  
+
+
+  <style>
+    
+    
+    
+    
+  </style>
+
+</head>
+<!-- HEADER -->
+<header class="navbar navbar-expand-lg  p-3" style="border-bottom: 2px solid ;">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <a href="/" class="navbar-brand">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+      </a>
+      <a href="/"><img class="Logo" src="{{ url_for('static', filename='Imagenes/Logo.png') }}" alt=""></a>
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <h1 style="user-select: none;" class="Ttitulo">Gamering</h1>
+      </ul>
+    </div> 
+    </div>
+  </div>
+</header>
+<!-- FIN HEADER -->
+<body>
+  <!-- INICIO BODY -->
+<div class="pantallaDestacada" style="height: 100%;">
+  <div class="parallax-premium">
+    <h1 class="TMasalva" style="font-size: 90px; margin-top: 50px">¿Quiénes somos?</h1>
+    <h1 class="TSlide" style="font-size: 45px;">Presentamos a:</h1>
+    <div class="container text-center"> 
+        <div class="row align-items-start">
+          <!-- Primera columna -->
+          <div class="col">
+            <div class="seccion">
+              <img class="imagen-grande" src="{{ url_for('static', filename='Imagenes/Chano.jpeg') }}" alt="Descripción de la imagen 1">
+              <div class="texto TRowdiesChiquillo" style="font-size: 40px;">
+                <h3 style="font-size: 75px;">Chano</h3>
+                <div>  Co-Director </div>
+                <div>  Frontend </div>
+                <div>  Marketing </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Segunda columna -->
+          <div class="col">
+            <div class="seccion">
+              <img class="imagen-grande" src="{{ url_for('static', filename='Imagenes/Hector.jpeg') }}" alt="Descripción de la imagen 1">
+              <div class="texto TRowdiesChiquillo" style="font-size: 40px;">
+                <h3 style="font-size: 75px;">Héctor</h3>
+                <div>  Co-Director </div>
+                <div>  Backend </div>
+                <div>  WebCrawler </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tercera columna -->
+          <div class="col">
+            <div class="seccion">
+              <img class="imagen-grande" src="{{ url_for('static', filename='Imagenes/Nico.jpeg') }}" alt="Descripción de la imagen 1">
+              <div class="texto TRowdiesChiquillo" style="font-size: 40px;">
+                <h3 style="font-size: 75px;">Nico</h3>
+                <div>  Firebase </div>
+                <div>  Apoyo Creativo </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</div>
+</div>
+<footer class="footer">
+  
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAMERING</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilos/estilos.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.4.1/tilt.jquery.min.css">
+    
+</head>
+
+
+<header class="navbar navbar-expand-lg navbar-light  p-3 border-bottom">
+    <div class="container-fluid d-  flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <a href="/" class="navbar-brand">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+        </a>
+        <img class="Logo animate__animated animate__backInLeft" src="Imagenes/Logo.png" alt="">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <h1 style="user-select: none;" class="Ttitulo animate__animated animate__backInLeft">Gamering</h1>
+        </ul>
+      </div>
+    
+  <div class="d-flex align-items-center animate__animated animate__backInDown">
+  
+     <div class="mr-2 d-flex align-items-center justify-content-center" style="background-color: white; width: 40px; height: 40px; border-radius: 10px; border: 1px solid gray; margin-right: 5px;">
+      <svg width="30" height="30" class="DocSearch-Search-Icon" viewBox="0 0 20 20">
+        <path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </div> 
+  
+    <!-- Formulario de búsqueda -->
+    <form id="searchForm" class="col-lg-8 mb-3 mb-lg-0 position-relative">
+      <input id="searchInput" type="search" class="form-control pl-4" placeholder="Buscar juegos..." aria-label="Search" style="height: 40px; width: 690px;">
+      <!-- Contenedor para mostrar resultados -->
+      <div id="searchResults" style="position: absolute; top: 100%; left: 0; width: 100%; background-color: white; border: 1px solid gray; border-radius: 5px; display: none; padding: 10px; z-index: 100;">
+        <!-- Aquí se mostrarán los resultados de la búsqueda -->
+      </div>
+    </form>
+  
+    <!-- Contenedor para mostrar resultados -->
+    <div id="searchResults" style="position: absolute; top: 100%; left: 0; width: 100%; background-color: white; border: 1px solid gray; border-radius: 5px; display: none; padding: 10px; z-index: 100;">
+      <!-- Aquí se mostrarán los resultados de la búsqueda -->
+    </div>
+  </div> 
+    
+  <div class="d-flex">
+
+
+
+    <div class="dropdown text-end me-5 animate__animated animate__backInDown">
+      <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgb(23,20,20);">
+          <img src="Imagenes/Usuario.png" alt="mdo" width="45" height="45" class="rounded-circle">
+      </button>
+                
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:2000;">
+          <li><a class="dropdown-item" href="login.html">Registrar</a></li>
+          <li><a class="dropdown-item" href="iniciar_session.html">Iniciar Sesión</a></li>
+      </ul>
+  </div>
+ 
+        <div class="dropdown text-end  animate__animated animate__backInRight">
+          <a href="#" id="toggle-menu" class="d-block link-body-emphasis text-decoration-none" data-bs-toggle="dropdown" data-bs-target="#menu-container" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-justify IconoCategoria  " viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+            </svg>
+          </a>
+        </div>
+      </div>  
+      </div>
+    </div>
+  </header>
+    <body>
+        <div id="menu-container" class="d-none d-flex  flex-column vh-100 rounded-start  degradado-bootstrap" style=" position: fixed; top: 0; right: 0; z-index: 1000; overflow-y: auto;"/>   
+            <div class="flex-shrink-0 p-3 bg-white  degradado-bootstrap" style="width: 280px;">
+           <div class="position-absolute top-0 end-0 mt-2 me-2 "  style="cursor: pointer" id="Boton-Container" >
+             <svg xmlns="http://www.w3.org/2000/svg"  width="35" height="35" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+               <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/>
+             </svg>
+           </div>
+             <div class="position-relative text-center">
+             <h1 class="TMenuCategoria dropdown-item ">Categorías</h1>
+           </a>
+         <ul class="list-unstyled ps-0">
+         <li class="mb-1">
+          <div class="collapse show" id="home-collapse">
+            <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_accion') }}">Acción</a>
+            <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_aventura') }}">Adventure</a></li>
+            <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_indie') }}">Indie</a></li>
+            <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_strategia') }}">Estrategia</a></li>
+            <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_plataforma') }}">Plataformer</a></li>
+            <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_disparos') }}">Disparos</a></li>
+            <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_simulacion') }}">Simulation</a></li>
+            <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_pelea') }}">Pelea</a></li>
+            <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_familia') }}">Familia</a></li>
+            <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_puzle') }}">Puzzle</a></li>
+            <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_arcade') }}">Arcade</a></li>
+            <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_deporte') }}">Deporte</a></li>
+            <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_cartas') }}">Carreras</a></li>
+
+          </div>
+        
+         </li>
+         </ul>
+        </div>
+    </div>
+</div>
+</button>
+<div class="pantallaDestacada">
+  <div class="parallax-section">
+    <div style="width: 100%; display: flex; justify-content: center;">
+      <h1 class="TCategoria animate__animated animate__shakeY" style="width: 889px; margin-bottom: 0; padding-bottom: 0;">OFERTAS DESTACADAS</h1>
+    </div>    
+    <div class="container" style="height: auto; padding-bottom: 45px">
+      <h2>{{ categoria }}</h2>
+      <div class="row">
+        {% for juego in juegos %}
+        <div class="col-md-3" style="margin-bottom: 15px;"> 
+          <div class="card" style="width: 90%; max-height: 300px;"> 
+            {% set urls = juego.imagen.split(',') %}
+            {% set url_principal = urls[0].strip() %}
+            <div class="image-container rounded-top"  style="width: 100%; height: 100px; overflow: hidden;">
+              <img src="{{ url_principal }}" alt="Imagen del juego" style="width: 310px; height: 100px; object-fit: cover;">
+            </div>
+            <div class="card-body">
+              {% if '€' not in juego.precio %}
+                {% set precio_con_euro = juego.precio.strip() + ' €' %}
+              {% else %}
+                {% set precio_con_euro = juego.precio %}
+              {% endif %}
+              <h4 class="card-price">{{ precio_con_euro }}</h4>
+              {% if 'steam' in juego.plataforma %}
+              <img src="/static/Imagenes/Steam.png" alt="Steam" style="width: 50px; height: 50px;">
+              {% endif %}
+              {% if 'gog' in juego.plataforma %}
+              <img src="/static/Imagenes/gog.png" alt="GOG" style="width: 50px; height: 50px;">
+              {% endif %}
+              <a href="{{ juego.url_oferta }}" class="btn btn-dark">ver página</a>
+            </div>
+          </div>
+        </div>
+        {% if loop.index % 4 == 0 %}
+        </div>
+        <div class="row">
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>
+
+  <div style="overflow: hidden; width: 100%;">
+    <div id="image-container" style="display: flex; transition: transform 1s ease;">
+        <img src="Imagenes/publicidad.png" alt="" width="100%" style="flex-shrink: 0;">
+        <img src="Imagenes/publicidad.png" alt="" width="100%" style="flex-shrink: 0;">
+    </div>
+  </div>
+    </body>
+    <footer class="Pie">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3" style="margin-top: 20px;">
+            <h5> </h5>
+            <div class="Logo2">
+              <img src="{{ url_for('static', filename='Imagenes/Logo.png') }}" alt="Logo" width="150px">
+            </div>
+          </div>
+  
+          <div class="col-6 col-md-2 mb-3" style="margin-top: 20px;">
+            <a href="{{ url_for('static', filename='pdf/Términos_y_Condiciones_de_Uso.pdf') }}" download>
+              <h5>Términos y condiciones</h5>
+            </a>
+            <a href="{{ url_for('static', filename='pdf/Política_de_Privacidad.pdf') }}" download><h5>Politica de Privacidad</h5></a>
+            
+  
+          </div>
+          <div class="col-6 col-md-2 mb-3" style="margin-top: 20px;">
+            <h5> </h5>
+            <h5>Cookies</h5>
+            <h5>Preguntas Frecuentes</h5>
+            <h5><a href="Equipo.html">¿Quiénes Somos?</a></h5>
+          </div>
+  
+          <div class="col-md-5 offset-md-1 " style="margin-top: 20px;">
+            <form>
+              <h5>Disfruta de los beneficios de ser Premium</h5>
+              <p>Suscríbete mensualmente para obtener pequeñas ventajas</p>
+              <div class="d-flex flex-column flex-sm-row h-25 w-100  gap-2">
+                <a href="/premium.html" class="btn btn-outline-warning">Ver Premium</a>
+  
+              </div>
+            </form>
+          </div>
+        </div>
+  
+        <div class="redes">
+  
+          <div class="d-flex justify-content-between border-top">
+            <p>© Hectano</p>
+            <div class="redes_sociales ml-auto" style="margin-top: 10px;">
+                <ul class="list-unstyled d-flex">
+                    <li class="Twitter" style="margin-right: 10px;"><img src="Imagenes/Twitter.png" alt="" width="50px" height="50px"></li>
+                    <li class="Facebook" style="margin-right: 10px;"><img src="Imagenes/Facebook.png" alt="" width="50px" height="50px"></li>
+                    <li class="Instagram"><img src="Imagenes/Instragram.png" alt="" width="50px" height="50px"></li>
+                </ul>
+            </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.4.1/tilt.jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-MzQnDFcXEi5xIM+9858yvGMva4Or4YhO5AqoRw5lkcO3YzS0P0eK13Lb5CCM9P6T" crossorigin="anonymous"></script>
+      
+      <script>
+        const tarjetas = document.querySelectorAll('.card'); // Selecciona todas las tarjetas
+    
+    // Oculta las tarjetas inicialmente
+    tarjetas.forEach((tarjeta) => {
+      tarjeta.style.visibility = 'hidden';
+    });
+    
+    tarjetas.forEach((tarjeta, index) => {
+      setTimeout(() => {
+        // Remueve la propiedad de visibilidad para mostrar la tarjeta
+        tarjeta.style.visibility = '';
+        
+        // Agrega las clases de animación a la tarjeta
+        tarjeta.classList.add('animate__animated', 'animate__flipInX');
+      }, index * 350); // Cada tarjeta se animará 350 milisegundos después de la anterior
+    });
+
+        const imageContainer = document.getElementById('image-container');
+        let translateValue = 0;
+        const speed = 1; // Puedes ajustar la velocidad
+        
+        function moveImages() {
+            translateValue -= speed;
+            imageContainer.style.transform = `translateX(${translateValue}px)`;
+        
+            // Si quieres que las imágenes vuelvan al inicio después de cierta distancia
+            const containerWidth = imageContainer.getBoundingClientRect().width;
+            if (Math.abs(translateValue) >= containerWidth) {
+                translateValue = 0;
+            }
+        
+            requestAnimationFrame(moveImages);
+        }
+        moveImages();
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+          const userImage = document.getElementById('user-image');
+          const menuContainer = document.getElementById('menu-container');
+          const toggleMenu = document.getElementById('toggle-menu');
+          const botonContainer = document.getElementById('Boton-Container');
+      
+          userImage.addEventListener('click', function() {
+            // Alternar la visibilidad del menú al hacer clic en la imagen de usuario
+            if (menuContainer.classList.contains('d-none')) {
+              // Si el menú está oculto, mostrarlo
+              menuContainer.classList.remove('d-none');
+            } else {
+              // Si el menú está visible, ocultarlo
+              menuContainer.classList.add('d-none');
+            }
+          });
+      
+          toggleMenu.addEventListener('click', function() {
+            menuContainer.className = ('d-flex flex-column vh-100 degradado-bootstrap animate__animated animate__fadeInRightBig');
+          });
+      
+          botonContainer.addEventListener('click', function() {
+            menuContainer.className = (' animate__animated animate__fadeOutRightBig d-flex flex-column vh-100 degradado-bootstrap ');
+          });
+        });
+      
+      
+      
+          toggleMenu.addEventListener('click', function() {
+              menuContainer.className = ('d-flex flex-column vh-100 degradado-bootstrap animate__animated animate__fadeInRightBig');
+              
+          });
+          botonContainer.addEventListener('click', function() {
+              menuContainer.className = (' animate__animated animate__fadeOutRightBig d-flex flex-column vh-100 degradado-bootstrap ');
+          });
+
+          $(document).ready(function() {
+            $('.card').tilt({
+                maxTilt: 10, // Ajusta la cantidad máxima de inclinación
+                perspective: 1000, // Ajusta la perspectiva del efecto
+                scale: 1.02 // Ajusta el nivel de escalado de la tarjeta al inclinarla
+            });
+        });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-l/ZxA6j+lHecdlFZoCu5zWuv7Gh4RPPKTk5FmzxoLy+4Qm2a5mpQ0w7oVTj+Kf8x" crossorigin="anonymous"></script>
+    </body>
+    <style>
+      .animate__shakeY {
+        animation-duration: 30s !important;
+        animation-iteration-count: infinite 
+      }
+    </style>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

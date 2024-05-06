@@ -1,0 +1,163 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta name="language" content="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+      <link rel="stylesheet" href="{{ url_for('static', filename='estilos/estilos.css') }}">
+      <title>GAMERING | Premium</title>
+  </head>
+  <!-- HEADER -->
+  <header class="navbar navbar-expand-lg  p-3" style="border-bottom: 2px solid #FFD700;">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <a href="/" class="navbar-brand">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+        </a>
+        <a href="/"><img class="Logo" src="{{ url_for('static', filename='Imagenes/Logo.png') }}" alt=""></a>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <h1 style="user-select: none; color: #FFD700;;" class="Ttitulo">Gamering</h1>
+        </ul>
+      </div>
+      <div class="d-flex">
+        <div class="dropdown text-end me-5 animate__animated animate__backInDown">
+          <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgb(23,20,20);">
+              <img src="Imagenes/Usuario.png" alt="mdo" width="45" height="45" class="rounded-circle">
+          </button>
+                    
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="login.html">Registrar</a></li>
+              <li><a class="dropdown-item" href="iniciar_session.html">Iniciar Sesión</a></li>
+          </ul>
+      </div>
+        <div class="dropdown text-end">
+          <a href="#" id="toggle-menu" class="d-block link-body-emphasis text-decoration-none " data-bs-toggle="dropdown" data-bs-target="#menu-container" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-justify IconoCategoria  " viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+            </svg>
+          </a>
+        </div>
+      </div>  
+      </div>
+    </div>
+  </header>
+
+  <!-- FIN HEADER -->
+
+  <body>
+    <!-- INICIO BODY -->
+
+  <div id="menu-container" class="d-none d-flex  flex-column vh-100 rounded-start  degradado-bootstrap" style="position: fixed; top: 0; right: 0; z-index: 1000; overflow-y: auto;  ">   
+    <div class="flex-shrink-0 p-3 bg-white  degradado-bootstrap" style="width: 280px;">
+    <div class="position-absolute top-0 end-0 mt-2 me-2 "  style="cursor: pointer " id="Boton-Container" >
+      <svg xmlns="http://www.w3.org/2000/svg"  width="35" height="35" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/>
+      </svg>
+    </div>
+      <div class="position-relative text-center">
+      <h1 class="TMenuCategoria dropdown-item ">Categorías</h1>
+  <ul class="list-unstyled ps-0">
+  <li class="mb-1">
+    <div class="collapse show" id="home-collapse">
+      <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_accion') }}">Acción</a>
+      <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_aventura') }}">Adventure</a></li>
+      <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_indie') }}">Indie</a></li>
+      <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_strategia') }}">Estrategia</a></li>
+      <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_plataforma') }}">Plataformer</a></li>
+      <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_disparos') }}">Disparos</a></li>
+      <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_simulacion') }}">Simulation</a></li>
+      <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_pelea') }}">Pelea</a></li>
+      <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_familia') }}">Familia</a></li>
+      <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_puzle') }}">Puzzle</a></li>
+      <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_arcade') }}">Arcade</a></li>
+      <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_deporte') }}">Deporte</a></li>
+      <li> <a class="dropdown-item TMenuNombres" style="border-top: 1px solid #3d4246; padding-top: 10px; margin-top: 8px;" href="{{ url_for('juegos_cartas') }}">Carreras</a></li>
+
+    </div>
+  </li>
+  </ul>
+  </div>
+  </div>
+  </div>
+  <div class="pantallaDestacada">
+    <div class="parallax-premium">
+      <h1 class="TCategoria" style="color: #FFD700;">Premium</h1>
+      <h1 class="TRoboto">Beneficios de ser Premium:</h1>
+      <div class="ContenedorPremium">
+        <div class="Tpremium mb-5" style="text-align: left; border: 2px solid #FFD700; padding: 1em; border-radius: 2rem;">
+          <ul id="beneficiosList1">
+            <h1 class="animate__animated mt-5em">· Marco de perfil personalizado</h1>
+            <h1 class="animate__animated mt-5em">· Participación para sorteos</h1>
+            <h1 class="animate__animated mt-5em">· ¡Acceso a nuestras propias ofertas de videojuegos!</h1>
+            <h1 class="animate__animated mt-5em">· Sin publicidad</h1>
+          </ul>
+        </div>
+      </div>
+      <h1 class="TRoboto">Desventajas de ser Premium:</h1>
+      <div class="ContenedorPremium">
+        <div class="Tpremium mb-5" style="text-align: left; border: 2px solid #FFD700; padding: 1em; border-radius: 2rem;">
+          <ul id="beneficiosList2">
+            <h1 class="animate__animated animate__rubberBand mt-5em">Ninguna 😊</h1>
+            <h1 class="animate__animated" style="margin-top: 20rem;">Pagar 1€/mes :3</h1>
+          </ul>
+        </div>
+      </div>
+      <h1 class="TSlide mt-25em" style="color: #FFD700;">PRÓXIMAMENTE</h1>
+    </div>
+  </div>
+
+  <style>
+  .animate__shakeY {
+    animation-duration: 30s !important; /* Duración de la animación ajustada a 10 segundos */
+    animation-iteration-count: infinite 
+  }
+  .animate__rubberBand {
+    animation-iteration-count: infinite 
+  }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const beneficios1 = document.querySelectorAll('#beneficiosList1 h1');
+      const beneficios2 = document.querySelectorAll('#beneficiosList2 h1');
+    
+      beneficios1.forEach((beneficio, index) => {
+          setTimeout(() => {
+              beneficio.classList.add('animate__shakeY');
+          }, index * 350);
+      });
+    
+      const desventaja = document.querySelector('.ContenedorPremium:last-child .animate__rubberBand');
+      desventaja.classList.add('animate__infinite');
+
+      beneficios2.forEach((beneficio, index) => {
+          setTimeout(() => {
+              beneficio.classList.add('animate__shakeY');
+          }, index * 350);
+      });
+  });
+
+    </script>
+    
+
+
+    <!-- Pie de página -->
+
+  </body>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- <script src="destacados.js"></script> -->
+  <!-- <script src="server.js"></script> -->
+
+  </html>
