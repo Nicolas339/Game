@@ -1,6 +1,6 @@
 const apiKey = '4ecdb8c869f3428792ca4168b70fdcb8';
 
-const juegosOferta = [
+const gameInfo= [
 {
   "internalName": "DEUSEXHUMANREVOLUTIONDIRECTORSCUT",
   "title": "Deus Ex: Human Revolution - Director's Cut",
@@ -1262,6 +1262,18 @@ const juegosOferta = [
   "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/239160/capsule_sm_120.jpg?t=1592493618"
 }
 ]
+// Construir el enlace al juego en Steam
+var steamGameLink = 'https://store.steampowered.com/app/' + gameInfo.steamAppID + '/';
+
+// steamGameLink contendrá ahora la URL completa del juego en la tienda de Steam
+console.log(steamGameLink); // Salida: https://store.steampowered.com/app/8870/
+steamLinkElement.href = steamGameLink;
+
+
+
+
+
+
 // // Obtén la fecha actual y la fecha de hace 30 días en formato YYYY-MM-DD
 // const verPaginaButton = document.createElement('a');
 // verPaginaButton.classList.add('btn-secondary');
