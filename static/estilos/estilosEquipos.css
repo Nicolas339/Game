@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital@1&family=Big+Shoulders+Inline+Display:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital@1&family=Big+Shoulders+Inline+Display:wght@800&family=Open+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10+Charted&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+10+Charted&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mansalva&family=Rowdies:wght@300;400;700&display=swap');
+*{
+    margin: 5;
+    
+}
+/* header*/
+header{
+    background-color: #000000;
+}
+body, html {
+    margin: 10;
+    padding: 10;
+
+}
+
+a{
+    font-family: 'Roboto', sans-serif;
+    color: aliceblue;
+}
+/* body{
+    background-color: black;
+} */
+h1{
+    text-align: center;
+    color:aliceblue;
+}
+.Logo{
+    width: 150px;
+    height: 100px;
+    margin-right: 2em;
+}
+.Logo2{
+    width: 15%;
+    height: 15%;
+}
+.card{
+    background-color: #cac5c1;
+    width: 288px;
+    height: 352.8px;
+}
+
+/* Nombres de los Fuentes de texto */
+.Ttitulo{
+    font-family: 'Big Shoulders Inline Display', sans-serif;
+    width: 10px;
+    font-size: 600%;
+}
+.Tsubtitulos{
+    font-family: 'Amaranth', sans-serif;
+}
+.Tcontenido{
+    font-family: 'Amaranth', sans-serif;
+}
+.Tpremium{
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 350;
+    font-style: normal;
+}
+.TCategoria{
+    font-family: 'Big Shoulders Inline Display', sans-serif;
+    font-size: 150px;
+    user-select: none;
+}
+.IconoCategoria{
+    color: white;
+}
+.TRoboto {
+    font-family: "Jersey 10 Charted", sans-serif;
+    font-weight: 500px;
+    font-style: normal;
+  }
+  .TSlide {
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .TRowdiesChiquillo {
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    font-style: normal;     
+  }
+  
+  .TRowdies {
+    font-family: "Rowdies", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .TRowdiesGrande{
+    font-family: "Rowdies", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .TMasalva {
+    font-family: "Mansalva", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.Container{
+    margin: 0 auto;
+    text-align: center;
+    
+}
+.parallax-premium{
+    background: rgb(0, 0, 0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+    .TMenuNombres:hover {
+        color: white;
+    }
+
+#menu-container {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: gray 1px solid;
+    background-image: linear-gradient(to top, #40b474, #5fc068, #80cb5a, #a3d54a, #c9dd39, #dcd427, #eec91a, #ffbe17, #ffa120, #ff8331, #ff6443, #ff4454);
+    /* Otros estilos según sea necesario */
+}
+.degradado-bootstrap {
+    background: linear-gradient(to top, #40b474, #5fc068, #80cb5a, #a3d54a, #c9dd39, #dcd427, #eec91a, #ffbe17, #ffa120, #ff8331, #ff6443, #ff4454);
+  }
+
+  .parallax-premium {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ContenedorPremium {
+    display: flex;
+    
+}
+
+.TextoPremium {
+    padding-right: 20px; 
+}
+
+
+.seccion {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.imagen-grande {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 2em;
+}
+
+.texto {
+    
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    color: white; /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+}
+.footer {
+    background-color: black;
+    padding: 150px 0; 
+  }
